@@ -1,5 +1,5 @@
 /*
- * TODO: Overlay container should have rounded corners
+ * DONE: Overlay container should have rounded corners
  */
 
 .event-detail-overlay {
@@ -32,6 +32,7 @@
     padding: 1rem;
     background-color: #fff;
     overflow: auto;
+    border-radius: 20px;
 }
 
 .event-detail-overlay__close {
