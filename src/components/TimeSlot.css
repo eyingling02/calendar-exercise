@@ -8,12 +8,18 @@
     border-bottom: 1px solid #666;
     min-height: 3rem;
     box-sizing: border-box;
-
     /**
-     * TODO: Figure out how not to have a bottom border on the last time-slot
+     * DONE: Figure out how not to have a bottom border on the last time-slot
      * which causes a double border
      */
 }
+.time-slot:last-child {
+    display: flex;
+    border-bottom: none;
+    min-height: 3rem;
+    box-sizing: border-box;
+}
+
 .time-slot__hour-label {
     width: 4rem;
     text-align: right;
