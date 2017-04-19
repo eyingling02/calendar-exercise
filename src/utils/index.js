@@ -16,6 +16,7 @@ export const filterEventsByDay = (events, timestamp) => {
     return events;
 }
 
+
 /**
  * Given a list of events and an hour number, filter the events down to those that
  * start on the specified hour
@@ -37,10 +38,11 @@ export const filterEventsByHour = (events, hour) => (
  */
 export const getDisplayDate = (timestamp) => {
     let date = new Date(timestamp);
+    let dateArray = date.toString().split(" ");
+    let formattedDate = `${dateArray[0]}, ${dateArray[1]} ${dateArray[2]}, ${dateArray[3]}`
+    // DONE: Format the date like: "Tuesday, April 11, 2017"
 
-    // TODO: Format the date like: "Tuesday, April 11, 2017"
-
-    return date.toString();
+    return formattedDate;
 };
 
 /**
