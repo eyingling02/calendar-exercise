@@ -12,22 +12,32 @@ export default class EventDetailOverlay extends PureComponent {
 
     render() {
         let {event, onClose} = this.props;
+
+        // Custom function that supports clicking ESC
+        function onEscape(event) {
+            if (event.keyCode === 27) {
+              onClose()
+            }
+        }
+        document.addEventListener('keydown', onEscape.bind(this))
+        // document.getElementsByClassName('page').addEventListener('click', onClose)
+
         let {title, description, start, color, hours} = event;
         let displayDate = getDisplayDate(start);
         let startHour = (new Date(start)).getHours();
 
+
         // TODO: Fix. If hours was other than 1 the UI would break
         let endHour = startHour + hours;
-
         let startHourDisplay = getDisplayHour(startHour)
         let endHourDisplay = getDisplayHour(endHour);
-
         let displayDateTime = `${displayDate} ${startHourDisplay} - ${endHourDisplay}`
 
-        // TODO: The event label color should match the event color
+        // DONE: The event label color should match the event color
         // TODO: Add appropriate ARIA tags to overlay/dialog
         // TODO: Support clicking outside of the overlay to close it
-        // TODO: Support clicking ESC to close it
+        // DONE: Support clicking ESC to close it
+
         return (
             <section className="event-detail-overlay">
                 <div className="event-detail-overlay__container">
