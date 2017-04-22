@@ -19,8 +19,18 @@ export default class EventDetailOverlay extends PureComponent {
               onClose()
             }
         }
+
+        // Attempted outside click for closing event-detail-overlay
+        // function onPageClick(event) {
+        //   let boxPresent = document.getElementsByClassName('event-detail-overlay')
+        //   let whereIClicked = event.target
+        //   if (boxPresent && boxPresent !== whereIClicked) {
+        //     onClose()
+        //   }
+        // }
+
         document.addEventListener('keydown', onEscape.bind(this))
-        // document.getElementsByClassName('page').addEventListener('click', onClose)
+        document.addEventListener('click', onPageClick.bind(this))
 
         let {title, description, start, color, hours} = event;
         let displayDate = getDisplayDate(start);
