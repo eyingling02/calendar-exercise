@@ -11,10 +11,11 @@ const _HOUR_DISPLAY_MAP = [
  * @returns {array}
  */
 export const filterEventsByDay = (events, timestamp) => {
-    // TODO: Implement day filtering!
-
-    return events;
-}
+  //// DONE: Implement day filtering!
+  return events.filter(({start}) => (
+      new Date(start)).getDay() === new Date(timestamp).getDay()
+    )
+};
 
 
 /**
@@ -41,7 +42,6 @@ export const getDisplayDate = (timestamp) => {
     let dateArray = date.toString().split(" ");
     let formattedDate = `${dateArray[0]}, ${dateArray[1]} ${dateArray[2]}, ${dateArray[3]}`
     // DONE: Format the date like: "Tuesday, April 11, 2017"
-
     return formattedDate;
 };
 
