@@ -9,7 +9,7 @@ import './Calendar.css';
 export default class Calendar extends PureComponent {
     static propTypes = {
         events: EVENTS_PROP_TYPE.isRequired,
-        onSelectEvent: PropTypes.func.isRequired,
+        onSelectEvent: PropTypes.func.isRequired
     }
 
     _renderTimeSlots() {

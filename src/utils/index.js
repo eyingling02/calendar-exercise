@@ -11,10 +11,12 @@ const _HOUR_DISPLAY_MAP = [
  * @returns {array}
  */
 export const filterEventsByDay = (events, timestamp) => {
-    // TODO: Implement day filtering!
+  //// DONE: Implement day filtering!
+  return events.filter(({start}) => (
+      new Date(start)).getDay() === new Date(timestamp).getDay()
+    )
+};
 
-    return events;
-}
 
 /**
  * Given a list of events and an hour number, filter the events down to those that
@@ -37,10 +39,10 @@ export const filterEventsByHour = (events, hour) => (
  */
 export const getDisplayDate = (timestamp) => {
     let date = new Date(timestamp);
-
-    // TODO: Format the date like: "Tuesday, April 11, 2017"
-
-    return date.toString();
+    let dateArray = date.toString().split(" ");
+    let formattedDate = `${dateArray[0]}, ${dateArray[1]} ${dateArray[2]}, ${dateArray[3]}`
+    // DONE: Format the date like: "Tuesday, April 11, 2017"
+    return formattedDate;
 };
 
 /**
