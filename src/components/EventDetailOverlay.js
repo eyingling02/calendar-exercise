@@ -30,7 +30,7 @@ export default class EventDetailOverlay extends PureComponent {
         // }
 
         document.addEventListener('keydown', onEscape.bind(this))
-        document.addEventListener('click', onPageClick.bind(this))
+        // document.addEventListener('click', onPageClick.bind(this))
 
         let {title, description, start, color, hours} = event;
         let displayDate = getDisplayDate(start);
